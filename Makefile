@@ -1,7 +1,5 @@
 .PHONY: all lint clean
 
-all: lint
-
 venv: requirements.txt
 	python3 -m venv venv
 	. venv/bin/activate && pip3 install -r requirements.txt
@@ -11,6 +9,9 @@ lint: venv
 
 isort:
 	isort .
+
+run: venv
+	. venv/bin/activate && python3 kittybot.py
 
 clean:
 	rm -rf venv
