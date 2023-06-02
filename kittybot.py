@@ -10,11 +10,6 @@ load_dotenv()
 TELEGRAM_TOKEN = os.getenv('bot_token')
 LOG_FILE = 'main.log'
 LOG_FORMAT = '%(asctime)s, %(levelname)s, %(name)s, %(message)s'
-logging.basicConfig(
-    format=LOG_FORMAT,
-    filename=LOG_FILE,
-    level=logging.INFO,
-)
 
 URL = 'https://api.thecatapi.com/v1/images/search'
 
@@ -78,4 +73,9 @@ def main():
 
 
 if __name__ == '__main__':
+    logging.basicConfig(
+        format=LOG_FORMAT,
+        filename=LOG_FILE,
+        level=logging.INFO,
+    )
     main()
